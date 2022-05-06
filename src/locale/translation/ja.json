@@ -1,16 +1,21 @@
 {
-    "페이지를 찾을 수 없어요.": "ページが見つかりませんでした。",
-    "header": {
-        "title": "配布所",
-        "home": "ホーム",
-        "policy": "利用規約",
-        "voicebank": "ボイスバンク"
-    },
-    "main": {
-        "read more": "もっと見る",
-        "title": "UTAU 配布所"
-    },
-    "footer": {
-        "copyright": "Copyright © 2022 RYU All Rights Reserved."
-    }
+  "페이지를 찾을 수 없어요.": "ページが見つかりませんでした。",
+  "header": {
+    "title": "配布所",
+    "home": "ホーム",
+    "policy": "利用規約",
+    "voicebank": "ボイスバンク"
+  },
+  "main": {
+    "readMore": "もっと見る",
+    "title": "UTAU 配布所"
+  },
+  "policy": {
+    "title": "利用規約",
+    "content": "대충 주저리주저리"
+  },
+  "footer": {
+    "copyright": "Copyright © 2022 RYU All Rights Reserved.",
+    "pageTop": "ページトップ"
+  }
 }

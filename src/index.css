@@ -1,32 +1,41 @@
-html, body:lang(ja) {
+html,
+body:lang(ja) {
+  scroll-behavior: smooth;
   margin: 0px;
-  font-family: 'Mochiy Pop Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Mochiy Pop Regular", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
+  scroll-behavior: smooth;
   margin: 0px;
-  font-family: 'Cookie Run Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Cookie Run Regular", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  font-family: 'Cookie Run Regular';
-  src: url('./assets/fonts/CookieRun\ Regular.ttf');
+  font-family: "Cookie Run Regular";
+  src: url("./assets/fonts/CookieRun\ Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Cookie Run Bold';
-  src: url('./assets/fonts/CookieRun\ Bold.ttf');
+  font-family: "Cookie Run Bold";
+  src: url("./assets/fonts/CookieRun\ Bold.ttf");
 }
 
 @font-face {
-  font-family: 'Mochiy Pop Regular';
-  src: url('./assets/fonts/MochiyPopPOne-Regular.ttf');
+  font-family: "Mochiy Pop Regular";
+  src: url("./assets/fonts/MochiyPopPOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("./assets/fonts/PretendardJPVariable.woff2") format("woff2");
 }

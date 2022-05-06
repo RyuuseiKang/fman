@@ -1,16 +1,21 @@
 {
-    "페이지를 찾을 수 없어요.": "페이지를 찾을 수 없어요.",
-    "header": {
-        "title": "UTAU",
-        "home": "홈",
-        "policy": "이용규약",
-        "voicebank": "보이스 뱅크"
-    },
-    "main": {
-        "read more": "자세히 보기",
-        "title": "UTAU 배포소"
-    },
-    "footer": {
-        "copyright": "Copyright © 2022 RYU All Rights Reserved."
-    }
+  "페이지를 찾을 수 없어요.": "페이지를 찾을 수 없어요.",
+  "header": {
+    "title": "UTAU",
+    "home": "홈",
+    "policy": "이용규약",
+    "voicebank": "보이스 뱅크"
+  },
+  "main": {
+    "readMore": "자세히 보기",
+    "title": "UTAU 배포소"
+  },
+  "policy": {
+    "title": "이용규약",
+    "content": "대충 주저리주저리"
+  },
+  "footer": {
+    "copyright": "Copyright © 2022 RYU All Rights Reserved.",
+    "pageTop": "맨 위로"
+  }
 }
