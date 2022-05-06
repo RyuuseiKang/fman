@@ -8,9 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 const App: React.FC = () => {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <ThemeProvider theme={theme}>
-      <AppRouter />
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <AppRouter />
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

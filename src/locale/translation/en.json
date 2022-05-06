@@ -1,4 +1,17 @@
 {
     "페이지를 찾을 수 없어요.": "Page Not Found.",
-    "잘못된 접근입니다.": "Invalid Access."
+    "잘못된 접근입니다.": "Invalid Access.",
+    "header": {
+        "title": "UTAU",
+        "home": "Home",
+        "policy": "User policy",
+        "voicebank": "Voicebank"
+    },
+    "main": {
+        "read more": "Read more",
+        "title": "UTAU voicebank distribution"
+    },
+    "footer": {
+        "copyright": "Copyright © 2022 RYU All Rights Reserved."
+    }
 }
