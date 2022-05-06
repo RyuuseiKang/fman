@@ -31,7 +31,7 @@ const Viewport = styled.div`
   display: flex;
   padding: 30px 0px 0px 0px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 865px) {
     height: 100vh;
     padding: 0px;
   }
@@ -49,7 +49,7 @@ const ItemContainer = styled.div`
   max-width: 880px;
   align-items: center;
 
-  @media (min-width: 768px) {
+  @media (min-width: 865px) {
     display: flex;
     justify-content: center;
   }
@@ -59,7 +59,7 @@ const CharacterDescription = styled.div`
   padding: 0px 5vw 0px 5vw;
   flex: 1;
 
-  @media (max-width: 768px) {
+  @media (max-width: 865px) {
     padding: 0px 10vw 0vh 10vw;
     justify-content: space-between;
     align-items: center;
@@ -88,7 +88,7 @@ const CharacterNameContainer = styled.div`
   
   display: flex;
 
-  @media (max-width: 768px) {
+  @media (max-width: 865px) {
     padding: 0px;
   }
 `;
@@ -107,25 +107,26 @@ const CVName = styled.p`
 
   text-shadow: 0px 0px 3px #ffffffcf;
 
-  @media (max-width: 768px) {
+  @media (max-width: 865px) {
     font-size: 1rem;
     -webkit-text-stroke: 0.5px ${({ color }) => color};
   }
 `;
 
 const NameImg = styled.img`
-height: 10vw;
+  height: 7vh;
   object-fit: contain;
   margin-left: -5px;
 
-  @media (min-width: 768px) {  
+  @media (min-width: 865px) {  
     margin-left: -20px;
+    height: 10vw;
   }
 `;
 
 const ReadMore = styled.div`
   border: 3px solid ${({ color }) => color};
-  padding: 10px 20px;
+  padding: 10px 15px;
   cursor: pointer;
   display: inline-flex;
   
