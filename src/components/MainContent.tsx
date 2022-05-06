@@ -1,19 +1,23 @@
 import React from "react";
-import {t} from "i18next";
+import { t } from "i18next";
 import styled from "styled-components";
-import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
+import Carousel from 'framer-motion-carousel';
 
 import Aru from "../assets/aru.png";
 import Machan from "../assets/machan.png";
 import MainContentBackground from "../assets/maincontent-background.png";
+import Background from "../assets/background.png";
+import AruText from '../assets/aru-text.png';
+import MachanText from '../assets/machan-text.png';
+import { ReactComponent as Arrow } from '../assets/right-arrow.svg';
 
 const Container = styled.div`
-  background: url(${MainContentBackground});
+  background: url(${Background});
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+
 `;
 
 const Viewport = styled.div`
@@ -25,28 +29,45 @@ const Viewport = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
+  padding: 30px 0px 0px 0px;
 
   @media (min-width: 768px) {
     height: 100vh;
+    padding: 0px;
   }
 `;
 
 const Content = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ItemContainer = styled.div`
   width: 100vw;
   max-width: 880px;
   align-items: center;
 
   @media (min-width: 768px) {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 `;
 
 const CharacterDescription = styled.div`
-  padding: 0px 15vw;
+  padding: 0px 5vw 0px 5vw;
+  flex: 1;
+
+  @media (max-width: 768px) {
+    padding: 0px 10vw 0vh 10vw;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
 `;
 
-const CharacterImage = styled.div`
+const CharacterContainer = styled.div`
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -54,95 +75,123 @@ const CharacterImage = styled.div`
   right: 0;
 
   display: flex;
+`;
 
-  @media (min-width: 768px) {
-    position: absolute;
-  }
+const CharacterImage = styled.img`
+  width: "50vw";
+
 `;
 
 const CharacterNameContainer = styled.div`
-  display: flex;
   flex-direction: column;
   padding: 0px 0px 5vh 0px;
-`;
+  
+  display: flex;
 
-const CVName = styled.span`
-  font-size: 1.2rem;
-  font-family: "Pretendard";
-  font-weight: bold;
-  color: #b3a4c6;
-`;
-
-const CharacterName = styled.span`
-  font-size: 6rem;
-  font-family: "Pretendard";
-  font-weight: bold;
-  color: #ffffffe0;
-  -webkit-text-stroke: 3px #b3a4c6;
-`;
-
-const ReadMore = styled.div`
-  border: 3px solid #b3a4c6;
-  padding: 10px;
-  cursor: pointer;
-  display: inline-block;
-  color: #b3a4c6;
-  background-color: #ffffffe0;
-
-  transition: all 0.3s ease;
-
-  &:hover {
-    background-color: #b3a4c6;
-    color: #fff;
+  @media (max-width: 768px) {
+    padding: 0px;
   }
 `;
 
+const CVName = styled.p`
+  margin: 0px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: transparent;
+
+  display: block;
+  white-space: nowrap;  
+
+  box-sizing: border-box;
+  -webkit-text-stroke: 1px ${({ color }) => color};
+
+  text-shadow: 0px 0px 3px #ffffffcf;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    -webkit-text-stroke: 0.5px ${({ color }) => color};
+  }
+`;
+
+const NameImg = styled.img`
+height: 10vw;
+  object-fit: contain;
+  margin-left: -5px;
+
+  @media (min-width: 768px) {  
+    margin-left: -20px;
+  }
+`;
+
+const ReadMore = styled.div`
+  border: 3px solid ${({ color }) => color};
+  padding: 10px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  
+  justify-content: center;
+  align-items: stretch;
+
+  background-color: #ffffffa0;
+
+  fill: ${({ color }) => color};
+  color: ${({ color }) => color};
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: ${({ color }) => color};
+    color: #fff;
+    fill: #FFF;
+  }
+`;
+
+const ReadMoreText = styled.span`
+  margin-left: 10px;
+`;
+
 const MainContent: React.FC = () => {
-  const options = {delay: 4000}; // Options
-  const autoplayRoot = (emblaRoot: any) => emblaRoot.parentElement; // Root node
-  const autoplay = Autoplay(options, autoplayRoot);
-
-  const [viewportRef, embla] = useEmblaCarousel(
-    {
-      loop: true,
-      skipSnaps: false,
-    },
-    [autoplay]
-  );
-
   return (
-    <Container className="embla__viewport" ref={viewportRef}>
-      <Viewport className="embla__container">
-        <Content className="embla__slide">
-          <CharacterDescription>
-            <CharacterNameContainer>
-              <CharacterName>ARU</CharacterName>
-              <CVName>CV. サト</CVName>
-            </CharacterNameContainer>
-            <ReadMore>
-              <span>{t<string>("main.readMore")}</span>
-            </ReadMore>
-          </CharacterDescription>
+    <Container>
+      <Viewport>
+        <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay={false} interval={5000} loop>
+          <Content>
+            <ItemContainer>
+              <CharacterDescription>
+                <CharacterNameContainer>
+                  <NameImg src={AruText} alt="aru" />
+                  <CVName color={'#D6CB67'}>CV. サト</CVName>
+                </CharacterNameContainer>
+                <ReadMore color={'#D6CB67'}>
+                  <Arrow />
+                  <ReadMoreText>{t<string>("main.readMore")}</ReadMoreText>
+                </ReadMore>
+              </CharacterDescription>
 
-          <CharacterImage>
-            <img src={Aru} alt="aru" style={{height: "60vh"}} />
-          </CharacterImage>
-        </Content>
-				<Content className="embla__slide">
-          <CharacterDescription>
-            <CharacterNameContainer>
-              <CharacterName>ARU</CharacterName>
-              <CVName>CV. サト</CVName>
-            </CharacterNameContainer>
-            <ReadMore>
-              <span>{t<string>("main.readMore")}</span>
-            </ReadMore>
-          </CharacterDescription>
+              <CharacterContainer>
+                <CharacterImage src={Aru} alt="aru" style={{ height: "60vh" }} />
+              </CharacterContainer>
+            </ItemContainer>
+          </Content>
 
-          <CharacterImage>
-            <img src={Aru} alt="aru" style={{height: "60vh"}} />
-          </CharacterImage>
-        </Content>
+          <Content>
+            <ItemContainer>
+              <CharacterDescription>
+                <CharacterNameContainer>
+                  <NameImg src={MachanText} alt="marin" />
+                  <CVName color={'#b3a4c6'}>CV. Kungom</CVName>
+                </CharacterNameContainer>
+                <ReadMore color={'#b3a4c6'}>
+                  <Arrow />
+                  <ReadMoreText>{t<string>("main.readMore")}</ReadMoreText>
+                </ReadMore>
+              </CharacterDescription>
+
+              <CharacterContainer>
+                <CharacterImage src={Machan} alt="marin" style={{ height: "60vh" }} />
+              </CharacterContainer>
+            </ItemContainer>
+          </Content>
+        </Carousel>
       </Viewport>
     </Container>
   );
