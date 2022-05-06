@@ -154,7 +154,7 @@ const MainContent: React.FC = () => {
   return (
     <Container>
       <Viewport>
-        <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay={false} interval={5000} loop>
+        <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay interval={5000} loop>
           <Content>
             <ItemContainer>
               <CharacterDescription>
