@@ -14,7 +14,7 @@ const Container = styled.div`
   width: 100%;
   z-index: 99;
 
-  background-color: #F4F4F4;
+  background-color: #FEFEFEC4;
 `;
 
 const Content = styled.div`
@@ -28,7 +28,7 @@ const Content = styled.div`
 `;
 
 const Title = styled.span`
-  margin-left: 40px;
+  margin-left: 20px;
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
@@ -46,11 +46,12 @@ const Menu = styled.ul`
 const MenuItem = styled.li`
   list-style-type: none;
   float: left;
-  margin-right: 40px;
+  margin-right: 20px;
 `;
 
 const MenuLink = styled.a`
   font-size: 1.1rem;
+  font-weight: bold;
   text-decoration: none;
   display: inline-block;
   position: relative;
@@ -64,7 +65,7 @@ const MenuLink = styled.a`
     height: 9px;
     bottom: 0;
     left: 5px;
-    background-color: #b3a4c6;
+    background-color: #D6CB67;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
     z-index: -1;

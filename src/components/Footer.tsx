@@ -29,8 +29,9 @@ const Copyright = styled.p`
 `;
 
 const PageTop = styled.a`
-    font-size: 0.8rem;
-    text-decoration: none;
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-weight: bold;
   display: inline-block;
   position: relative;
   color: #333;

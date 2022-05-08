@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+import Policy from "./Policy";
+import VoiceBank from "./VoiceBank";
+
 import MainContent from "../components/MainContent";
-import Policy from "../components/Policy";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {motion} from "framer-motion";
@@ -30,7 +32,7 @@ const Main: React.FC = () => {
         </div>
 
         <div id="voicebank"></div>
-
+          <VoiceBank />
         <Footer />
       </Container>
     </motion.div>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Carousel from 'framer-motion-carousel';
 
 import Aru from "../assets/aru.png";
-import Machan from "../assets/machan.png";
+import Machan from "../assets/sans-machan.png";
 import MainContentBackground from "../assets/maincontent-background.png";
 import Background from "../assets/background.png";
 import AruText from '../assets/aru-text.png';
@@ -56,13 +56,18 @@ const ItemContainer = styled.div`
 `;
 
 const CharacterDescription = styled.div`
-  padding: 0px 5vw 0px 5vw;
   flex: 1;
+  display: flex;
+  justify-content: center;    
+  flex-direction: column;
+    align-items: center;
 
   @media (max-width: 865px) {
     padding: 0px 10vw 0vh 10vw;
-    justify-content: space-between;
     align-items: center;
+    
+  justify-content: space-around;
+  flex-direction: row;
     display: flex;
   }
 `;
@@ -79,14 +84,14 @@ const CharacterContainer = styled.div`
 
 const CharacterImage = styled.img`
   width: "50vw";
-
 `;
 
 const CharacterNameContainer = styled.div`
   flex-direction: column;
-  padding: 0px 0px 5vh 0px;
+  padding: 0px 0px 30px 0px;
   
   display: flex;
+  justify-content: center;
 
   @media (max-width: 865px) {
     padding: 0px;
@@ -94,6 +99,8 @@ const CharacterNameContainer = styled.div`
 `;
 
 const CVName = styled.p`
+  font-family: 'Mochiy Pop Regular';
+  text-align: center;
   margin: 0px;
   font-size: 1.4rem;
   font-weight: bold;
@@ -117,9 +124,9 @@ const NameImg = styled.img`
   height: 7vh;
   object-fit: contain;
   margin-left: -5px;
+  margin-bottom: 15px;
 
   @media (min-width: 865px) {  
-    margin-left: -20px;
     height: 10vw;
   }
 `;
@@ -131,7 +138,7 @@ const ReadMore = styled.div`
   display: inline-flex;
   
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
 
   background-color: #ffffffa0;
 
@@ -148,13 +155,20 @@ const ReadMore = styled.div`
 
 const ReadMoreText = styled.span`
   margin-left: 10px;
+  font-weight: bold;
 `;
 
 const MainContent: React.FC = () => {
   return (
     <Container>
+      <input type="text" onKeyPress={(e) => {
+        console.log(e.key);
+        if (e.key === "Enter") {
+
+        }
+      }} />
       <Viewport>
-        <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay interval={5000} loop>
+        <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay={false} interval={5000} loop>
           <Content>
             <ItemContainer>
               <CharacterDescription>

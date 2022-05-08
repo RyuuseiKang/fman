@@ -2,7 +2,7 @@ html,
 body:lang(ja) {
   scroll-behavior: smooth;
   margin: 0px;
-  font-family: "Mochiy Pop Regular", -apple-system, BlinkMacSystemFont,
+  font-family: "851Tegaki", -apple-system, BlinkMacSystemFont,
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -33,6 +33,11 @@ body {
 @font-face {
   font-family: "Mochiy Pop Regular";
   src: url("./assets/fonts/MochiyPopPOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "851Tegaki";
+  src: url('./assets/fonts/851tegaki_zatsu_normal_0883.ttf');
 }
 
 @font-face {
