@@ -29,6 +29,14 @@ body {
   display: none;
 }
 
+.rhap_container {
+  box-shadow: 0 0 0px 0 rgba(0, 0, 0, 0);
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  margin: 10px 0px;
+}
+
 @font-face {
   font-family: "Cookie Run Regular";
   src: url("./assets/fonts/CookieRun\ Regular.ttf");
@@ -46,7 +54,7 @@ body {
 
 @font-face {
   font-family: "851Tegaki";
-  src: url('./assets/fonts/851tegaki_zatsu_normal_0883.ttf');
+  src: url("./assets/fonts/851tegaki_zatsu_normal_0883.ttf");
 }
 
 @font-face {

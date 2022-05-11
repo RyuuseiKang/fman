@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {t} from "i18next";
 import {Link} from "react-router-dom";
-import styled from "styled-components";
+import { throttle } from 'lodash';
+import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
-const Container = styled.div`
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
+const Container = styled.div<{isShown: boolean}>`
   width: 100%;
   padding: 10px 0px;
-  display: flex;
   justify-content: center;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 99;
+  display: flex;
 
-  background-color: #FEFEFEC4;
+  visibility: ${props => props.isShown ? 'visible' : 'hidden'};
+  animation: ${props => props.isShown ? fadeIn : fadeOut} 0.2s linear;
+  transition: visibility 0.2s linear;
 `;
 
 const Content = styled.div`
@@ -79,8 +101,26 @@ const MenuLink = styled.a`
 `;
 
 const Header: React.FC = () => {
+  const { height, width } = useWindowDimensions();
+  const [isHeaderShown, setIsHeaderShown] = useState<boolean>(true);
+
+  const throttledScroll = useMemo(
+    () =>
+      throttle(() => {
+        setIsHeaderShown(window.scrollY < height - 50);
+      }, 300),
+    []
+  );
+
+  useEffect(() => {
+    window.addEventListener('scroll', throttledScroll);
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+    };
+  }, [throttledScroll]);
+
   return (
-    <Container>
+    <Container isShown={isHeaderShown}>
       <Content>
         <Title>{t<string>("header.title")}</Title>
         <Menu>

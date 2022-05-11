@@ -14,10 +14,17 @@ const Content = styled.div`
   width: 100%;
 `;
 
+const PolicyTitleContainer = styled.div`
+  padding: 1rem 0px;
+`;
+
 const PolicyTitle = styled.span`
   font-size: 2.5rem;
   font-weight: bold;
   
+  background-color: #333;
+  padding: 0px 5px;
+  color: #FFF;
 `;
 
 const PolicySubTitle = styled.span`
@@ -33,15 +40,10 @@ const Policy: React.FC = () => {
   return (
     <Container>
       <Content>
-        <motion.div
-          initial={{ opacity: 0, y: "1rem" }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          style={{ padding: '1rem 0px 1rem 0px' }}
+        <PolicyTitleContainer
         >
           <PolicyTitle>{t<string>("policy.title")}</PolicyTitle>
-        </motion.div>
+        </PolicyTitleContainer>
         <motion.div
           initial={{ opacity: 0, y: "1rem" }}
           transition={{ duration: 0.5, delay: 0.5 }}
