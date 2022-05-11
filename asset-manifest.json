@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.562c054d.css",
-    "main.js": "/static/js/main.ee4171e7.js",
+    "main.css": "/static/css/main.dcb05d8c.css",
+    "main.js": "/static/js/main.76a45883.js",
     "static/js/787.2539bdf9.chunk.js": "/static/js/787.2539bdf9.chunk.js",
     "static/media/851tegaki_zatsu_normal_0883.ttf": "/static/media/851tegaki_zatsu_normal_0883.6b4e801ce88ea3eb2193.ttf",
     "static/media/MochiyPopPOne-Regular.ttf": "/static/media/MochiyPopPOne-Regular.a343480e7534e19d0c78.ttf",
@@ -16,12 +16,12 @@
     "static/media/aru-text.png": "/static/media/aru-text.4c9c993e7f6b52ea4d6a.png",
     "index.html": "/index.html",
     "static/media/right-arrow.svg": "/static/media/right-arrow.d011da7d7bfd31e358536a3f25e007c3.svg",
-    "main.562c054d.css.map": "/static/css/main.562c054d.css.map",
-    "main.ee4171e7.js.map": "/static/js/main.ee4171e7.js.map",
+    "main.dcb05d8c.css.map": "/static/css/main.dcb05d8c.css.map",
+    "main.76a45883.js.map": "/static/js/main.76a45883.js.map",
     "787.2539bdf9.chunk.js.map": "/static/js/787.2539bdf9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.562c054d.css",
-    "static/js/main.ee4171e7.js"
+    "static/css/main.dcb05d8c.css",
+    "static/js/main.76a45883.js"
   ]
 }
