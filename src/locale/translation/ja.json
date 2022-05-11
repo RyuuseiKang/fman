@@ -15,7 +15,17 @@
     "content": "대충 주저리주저리"
   },
   "footer": {
-    "copyright": "Copyright © 2022 RYU All Rights Reserved.",
+    "copyright": "Copyright 2022 RYU All Rights Reserved.",
     "pageTop": "ページトップ"
+  },
+  "voicebank": {
+    "name": "名前",
+    "age": "年齢",
+    "gender": "性別",
+    "height": "身長",
+    "cv": "CV",
+    "likes": "好きなこと",
+    "others": "その他",
+    "samples": "サンプル"
   }
 }

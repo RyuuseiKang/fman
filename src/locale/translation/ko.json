@@ -15,7 +15,12 @@
     "content": "대충 주저리주저리"
   },
   "footer": {
-    "copyright": "Copyright © 2022 RYU All Rights Reserved.",
+    "copyright": "Copyright 2022 RYU All Rights Reserved.",
     "pageTop": "맨 위로"
+  },
+  "voicebank": {
+    "name": "Name",
+    "Age": "Age",
+    "likes": "Likes"
   }
 }

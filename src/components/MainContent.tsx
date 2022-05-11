@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Carousel from 'framer-motion-carousel';
 
 import Aru from "../assets/aru.png";
-import Machan from "../assets/sans-machan.png";
+import Machan from "../assets/machan.png";
 import MainContentBackground from "../assets/maincontent-background.png";
 import Background from "../assets/background.png";
 import AruText from '../assets/aru-text.png';
@@ -131,7 +131,7 @@ const NameImg = styled.img`
   }
 `;
 
-const ReadMore = styled.div`
+const ReadMore = styled.a`
   border: 3px solid ${({ color }) => color};
   padding: 10px 15px;
   cursor: pointer;
@@ -141,6 +141,7 @@ const ReadMore = styled.div`
   align-items: center;
 
   background-color: #ffffffa0;
+  text-decoration: none;
 
   fill: ${({ color }) => color};
   color: ${({ color }) => color};
@@ -148,8 +149,8 @@ const ReadMore = styled.div`
 
   &:hover {
     background-color: ${({ color }) => color};
-    color: #fff;
-    fill: #FFF;
+    color: #FAFAFA;
+    fill: #FAFAFA;
   }
 `;
 
@@ -161,12 +162,6 @@ const ReadMoreText = styled.span`
 const MainContent: React.FC = () => {
   return (
     <Container>
-      <input type="text" onKeyPress={(e) => {
-        console.log(e.key);
-        if (e.key === "Enter") {
-
-        }
-      }} />
       <Viewport>
         <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay={false} interval={5000} loop>
           <Content>
@@ -176,7 +171,7 @@ const MainContent: React.FC = () => {
                   <NameImg src={AruText} alt="aru" />
                   <CVName color={'#D6CB67'}>CV. サト</CVName>
                 </CharacterNameContainer>
-                <ReadMore color={'#D6CB67'}>
+                <ReadMore color={'#D6CB67'} href={'#aru'}>
                   <Arrow />
                   <ReadMoreText>{t<string>("main.readMore")}</ReadMoreText>
                 </ReadMore>
@@ -195,7 +190,7 @@ const MainContent: React.FC = () => {
                   <NameImg src={MachanText} alt="marin" />
                   <CVName color={'#b3a4c6'}>CV. Kungom</CVName>
                 </CharacterNameContainer>
-                <ReadMore color={'#b3a4c6'}>
+                <ReadMore color={'#b3a4c6'} href={'#machan'}>
                   <Arrow />
                   <ReadMoreText>{t<string>("main.readMore")}</ReadMoreText>
                 </ReadMore>
