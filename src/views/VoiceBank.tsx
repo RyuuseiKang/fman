@@ -3,20 +3,13 @@ import React, {useRef} from "react";
 import styled, {keyframes} from "styled-components";
 import AnimatedText from "react-animated-text-content";
 
-import AudioPlayer, {RHAP_UI} from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
-
 import MachanFull from "../assets/machan-full.png";
 import useOnScreen from "../hooks/useOnScreen";
+import { motion } from "framer-motion";
+import TextAnimation from "../components/TextAnimation";
+import AudioPlayer from "../components/AudioPlayer";
 
-const showUp = keyframes`
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 100%;
-	}
-`;
+import machanSample from "../assets/machan-sample.mp3";
 
 const Container = styled.div`
   width: 100%;
@@ -68,7 +61,7 @@ const TwitterTag = styled.a`
   color: #333;
 `;
 
-const TagDescription = styled(AnimatedText)`
+const TagDescription = styled.span`
   padding-top: 10px;
   padding-bottom: 15px;
   padding-left: 30px;
@@ -88,62 +81,57 @@ const VoiceBank: React.FC = () => {
         <ProfileDescriptionContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.name")}</TagTitle>
-            <TagDescription type="words" animationType="wave" duration={0.3}>
+            <TextAnimation>
+            <TagDescription>
               {t<string>("fisher marine")}
             </TagDescription>
+            </TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.age")}</TagTitle>
-            <TagDescription type="words" animationType="wave" duration={0.3}>
+            <TextAnimation>
+            <TagDescription>
               {t<string>("300歳")}
             </TagDescription>
+            </TextAnimation>
           </TagContainer>
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.gender")}</TagTitle>
-            <TagDescription type="words" animationType="wave" duration={0.3}>
+            <TagTitle>{t<string>("voicebank.gender")}</TagTitle><TextAnimation>
+            <TagDescription>
               {t<string>("fish boy")}
             </TagDescription>
+            </TextAnimation>
           </TagContainer>
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.cv")}</TagTitle>
+            <TagTitle>{t<string>("voicebank.cv")}</TagTitle><TextAnimation>
             <TwitterTag href="https://twitter.com/kungom_">
-              <TagDescription type="words" animationType="wave" duration={0.3}>
+              <TagDescription>
                 {t<string>("kungom")}
               </TagDescription>
             </TwitterTag>
+            </TextAnimation>
           </TagContainer>
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.height")}</TagTitle>
-            <TagDescription type="words" animationType="wave" duration={0.3}>
+            <TagTitle>{t<string>("voicebank.height")}</TagTitle><TextAnimation>
+            <TagDescription>
               {t<string>("140㎝")}
-            </TagDescription>
+            </TagDescription></TextAnimation>
           </TagContainer>
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.likes")}</TagTitle>
-            <TagDescription type="words" animationType="wave" duration={0.3}>
+            <TagTitle>{t<string>("voicebank.likes")}</TagTitle><TextAnimation>
+            <TagDescription>
               {t<string>("Gaia / Playing with humans / Sea")}
-            </TagDescription>
+            </TagDescription></TextAnimation>
           </TagContainer>
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.others")}</TagTitle>
-            <TagDescription type="words" animationType="wave" duration={0.3}>
+            <TagTitle>{t<string>("voicebank.others")}</TagTitle><TextAnimation>
+            <TagDescription>
               {t<string>("He is the king of the deep sea")}
-            </TagDescription>
+            </TagDescription></TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.samples")}</TagTitle>
-            <AudioPlayer
-              src="http://example.com/audio.mp3"
-              onPlay={() => console.log("onPlay")}
-              showJumpControls={false}
-              showDownloadProgress={true}
-              showSkipControls={false}
-              showFilledProgress={true}
-              showFilledVolume={true}
-              customProgressBarSection={[RHAP_UI.PROGRESS_BAR]}
-              customAdditionalControls={[]}
-              layout="horizontal"
-            />
+            <AudioPlayer src={machanSample} />
           </TagContainer>
         </ProfileDescriptionContainer>
       </Content>
