@@ -1,6 +1,6 @@
-import {t} from "i18next";
-import React, {useRef} from "react";
-import styled, {keyframes} from "styled-components";
+import { t } from "i18next";
+import React, { useRef } from "react";
+import styled, { keyframes } from "styled-components";
 import AnimatedText from "react-animated-text-content";
 
 import MachanFull from "../assets/machan-full.png";
@@ -21,7 +21,7 @@ const Content = styled.div`
   max-width: 865px;
   display: flex;
   flex: 1;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   @media (max-width: 865px) {
@@ -41,6 +41,11 @@ const CharacterImg = styled.img`
 
 const ProfileDescriptionContainer = styled.div`
   padding: 20px;
+  flex: 1;
+
+  @media (max-width: 865px) {
+    width: calc(100% - 40px);
+  }
 `;
 
 const TagContainer = styled.div`
@@ -82,52 +87,54 @@ const VoiceBank: React.FC = () => {
           <TagContainer>
             <TagTitle>{t<string>("voicebank.name")}</TagTitle>
             <TextAnimation>
-            <TagDescription>
-              {t<string>("fisher marine")}
-            </TagDescription>
+              <TagDescription>
+                {t<string>("fisher marine")}
+              </TagDescription>
             </TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.age")}</TagTitle>
             <TextAnimation>
-            <TagDescription>
-              {t<string>("300歳")}
-            </TagDescription>
+              <TagDescription>
+                {t<string>("300歳")}
+              </TagDescription>
             </TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.gender")}</TagTitle><TextAnimation>
-            <TagDescription>
-              {t<string>("fish boy")}
-            </TagDescription>
+              <TagDescription>
+                {t<string>("fish boy")}
+              </TagDescription>
             </TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.cv")}</TagTitle><TextAnimation>
-            <TwitterTag href="https://twitter.com/kungom_">
-              <TagDescription>
-                {t<string>("kungom")}
-              </TagDescription>
-            </TwitterTag>
+              <TwitterTag href="https://twitter.com/kungom_">
+                <TagDescription>
+                  {t<string>("kungom")}
+                </TagDescription>
+              </TwitterTag>
             </TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.height")}</TagTitle><TextAnimation>
-            <TagDescription>
-              {t<string>("140㎝")}
-            </TagDescription></TextAnimation>
+              <TagDescription>
+                {t<string>("140㎝")}
+              </TagDescription></TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.likes")}</TagTitle><TextAnimation>
-            <TagDescription>
-              {t<string>("Gaia / Playing with humans / Sea")}
-            </TagDescription></TextAnimation>
+              <TagDescription>
+                {t<string>("Gaia / Playing with humans / Sea")}
+              </TagDescription></TextAnimation>
           </TagContainer>
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.others")}</TagTitle><TextAnimation>
-            <TagDescription>
-              {t<string>("He is the king of the deep sea")}
-            </TagDescription></TextAnimation>
+            <TagTitle>{t<string>("voicebank.others")}</TagTitle>
+            <TextAnimation>
+              <TagDescription>
+                {t<string>("He is the king of the deep sea")}
+              </TagDescription>
+            </TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.samples")}</TagTitle>

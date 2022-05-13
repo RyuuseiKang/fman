@@ -1,32 +1,99 @@
 import React, { useRef, useState } from 'react';
+import styled from 'styled-components';
+
+import { faCirclePlay, faCirclePause } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import ProgressBar from './ProgressBar';
+
+const Container = styled.div`
+    flex-direction: row;
+    border-radius: 5px;
+    background-color: #333;
+    padding: 10px;
+    margin: 10px 0px;
+
+    align-items: center;
+    display: flex;
+`;
+
+const PlayButton = styled.button`
+    background-color: transparent;
+    border: none;
+`;
+
+const Button = styled(FontAwesomeIcon)`
+    font-size: 50px;
+    color: #FFF;
+`;
+
+const ProgressBarContainer = styled.div`
+    padding: 0px 10px;
+    width: 100%;
+`;
+
+const CurrentTime = styled.div`
+    margin-top: 5px;
+    color: #FFF;
+`;
 
 type AudioPlayerProps = {
     src: string;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({src}) => {
-    const audioRef = useRef(new Audio(src));
+const formatTime: any = (time: number) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
 
-    const [trackProgress, setTrackProgress] = useState<number>(0);
+    return `${minutes.toString()}:${seconds < 10 ? '0' : ''}${seconds.toString()}`;
+}
+
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
+    const audioRef = useRef<HTMLAudioElement | null>(null);
+
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
+    const [duration, setDuration] = useState<number>(0);
+    const [currentTime, setCurrentTime] = useState<number>(0);
 
-    
     return (
-        <div>
-            <button onClick={() => {
+        <Container>
+            <audio
+                onLoadedData={() => {
+                    if (audioRef.current) {
+                        setDuration(audioRef.current?.duration || 0);
+                    }
+                }}
+                src={src}
+                ref={audioRef}
+                onTimeUpdate={() => {
+                    setCurrentTime(audioRef.current?.currentTime || 0);
+                }}
+                onEnded={() => {
+                    setIsPlaying(false);
+                    setDuration(0);
+                }}
+                hidden
+            />
+            <PlayButton onClick={() => {
                 if (isPlaying) {
-                    audioRef.current.pause();
+                    audioRef.current?.pause();
                     setIsPlaying(false);
                 } else {
-                    audioRef.current.play();
+                    audioRef.current?.play();
                     setIsPlaying(true);
                 }
-            }
-        }>
-                {isPlaying ? 'Pause' : 'Play'}
-        </button>
-
-        </div>
+            }}>
+                <Button icon={isPlaying ? faCirclePause : faCirclePlay} />
+            </PlayButton>
+            <ProgressBarContainer>
+                <ProgressBar value={audioRef.current?.currentTime || 0} max={audioRef.current?.duration || 0} />
+                <CurrentTime>
+                    {formatTime(audioRef.current?.currentTime || 0)}
+                    /
+                    {formatTime(audioRef.current?.duration || 0)}
+                </CurrentTime>
+            </ProgressBarContainer>
+        </Container>
     );
 }
 
