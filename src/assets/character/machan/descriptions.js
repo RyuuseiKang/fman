@@ -56,15 +56,16 @@ const descriptions = {
   cv_twitter: "kungom_",
   
   sample_path: SampleAudio,
+  sample_ust: 'LITT',
   fullsize_image: FullsizeImage,
-  download_link: "",
+  download_link: "https://drive.google.com/drive/folders/1V2RqTtXBucOiv418C8R0f_RO5vkXroH4",
 
 	others: [
 		{
 			tag_name: "others",
-			ja: "2022.05.14 配布開始",
-			ko: "2022.05.14 배포 개시",
-			en: "2022.05.14 Release"
+			ja: "2022.05.03 配布開始",
+			ko: "2022.05.03 배포 개시",
+			en: "2022.05.03 Release"
 		}
 	]
 };

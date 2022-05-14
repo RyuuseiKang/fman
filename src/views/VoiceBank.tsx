@@ -117,16 +117,14 @@ const VoiceBank: React.FC<VoiceBankProps> = ({ characterDescription }) => {
             characterDescription.descriptions.map((description, index) => (
               <TagContainer>
                 <TagTitle>{t<string>(`voicebank.${description.tag_name}`)}</TagTitle>
-                <TextAnimation>
                   <TagDescription>
                     {description[i18next.language as keyof DescriptionTags]}
                   </TagDescription>
-                </TextAnimation>
               </TagContainer>
             ))
           }
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.cv")}</TagTitle><TextAnimation>
+            <TagTitle>{t<string>("voicebank.cv")}</TagTitle>
               <TwitterTag href={`https://twitter.com/${characterDescription.cv_twitter}`}>
                 <TagDescription>
                   <FontAwesomeIcon icon={faTwitter} />
@@ -135,7 +133,6 @@ const VoiceBank: React.FC<VoiceBankProps> = ({ characterDescription }) => {
                   </TwitterUsername>
                 </TagDescription>
               </TwitterTag>
-            </TextAnimation>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.samples")}</TagTitle>
@@ -156,12 +153,9 @@ const VoiceBank: React.FC<VoiceBankProps> = ({ characterDescription }) => {
             <TagTitle>{t<string>(`voicebank.others`)}</TagTitle>
             {
               characterDescription.others.map((others, index) => (
-                <TextAnimation>
                   <TagDescription>
                     {others[i18next.language as keyof DescriptionTags]}
                   </TagDescription>
-                </TextAnimation>
-
               ))
             }
           </TagContainer>

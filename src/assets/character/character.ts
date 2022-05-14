@@ -23,6 +23,7 @@ export type Description = {
   cv_twitter: string,
 
   sample_path: string,
+  sample_ust: string,
   fullsize_image: string,
   download_link: string,
 

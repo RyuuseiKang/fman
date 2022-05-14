@@ -14,11 +14,11 @@
     "title": "User Policy",
     "content": "本規約は、このウェブサイト上で提供されるライブラリーを利用するために当サイトを利用するすべての方（以下「利用者」といいます。）に適用されます。\n利用者は、本規約に同意し、その利用を希望することになった場合に限り、本ライブラリーを利用することができます。",
     "commercialUse": "Commercial use",
-    "commercialUseDescription": "Commercial use is not licensed.",
+    "commercialUseDescription": "Please contact CV.",
     "modification": "Modification",
     "modificationDescription": "It is not permitted to modify or modify the distributed library.",
     "redistribution": "Redistribution",
-    "redistributionDescription": "Redistributing the distributed library is not permitted."
+    "redistributionDescription": "Please distribute it freely."
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",

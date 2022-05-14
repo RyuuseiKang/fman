@@ -56,6 +56,7 @@ const descriptions = {
   cv_twitter: "kungom_",
   
   sample_path: SampleAudio,
+  sample_ust: 'LITT',
   fullsize_image: FullsizeImage,
   download_link: "",
 	
