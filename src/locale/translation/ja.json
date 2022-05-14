@@ -18,7 +18,9 @@
     "modification": "修正・改変",
     "modificationDescription": "配布したライブラリを修正・改変することは許諾されていません。",
     "redistribution": "再配布",
-    "redistributionDescription": "ご自由にご配布ください。"
+    "redistributionDescription": "ご自由にご配布ください。",
+    "fanMade": "二次創作",
+    "fanMadeDescription": "二次創作はご自由にどうぞ。"
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",

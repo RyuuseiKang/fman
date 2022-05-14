@@ -12,13 +12,15 @@
   },
   "policy": {
     "title": "User Policy",
-    "content": "本規約は、このウェブサイト上で提供されるライブラリーを利用するために当サイトを利用するすべての方（以下「利用者」といいます。）に適用されます。\n利用者は、本規約に同意し、その利用を希望することになった場合に限り、本ライブラリーを利用することができます。",
+    "content": "This agreement applies to all persons who use this site (hereinafter referred to as \"users\") to use the library provided on this website.\nThe user can use this library only if he / she agrees to this agreement and wishes to use it.",
     "commercialUse": "Commercial use",
     "commercialUseDescription": "Please contact CV.",
     "modification": "Modification",
     "modificationDescription": "It is not permitted to modify or modify the distributed library.",
     "redistribution": "Redistribution",
-    "redistributionDescription": "Please distribute it freely."
+    "redistributionDescription": "Please distribute it freely.",
+    "fanMade": "Fan-made",
+    "fanMadeDescription": "Feel free to create derivative works."
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",

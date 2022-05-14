@@ -15,11 +15,13 @@
     "title": "이용규약",
     "content": "이 규약은 해당 웹 사이트에서 제공되는 라이브러리를 이용하기 위하여 사이트를 이용하는 모든 사람（이하 「이용자」로 칭함）에게 적용됩니다.\n이용자는 이 규약에 동의하며, 이를 이용하기를 희망하는 경우에 한하여, 본 라이브러리를 사용할 수 있습니다.",
     "commercialUse": "상업적 이용",
-    "commercialUseDescription": "CV에게 문의해주세요.",
+    "commercialUseDescription": "CV에게 문의 부탁드립니다.",
     "modification": "수정・개조",
     "modificationDescription": "배포된 라이브러리의 수정・개조는 허락되지 않습니다.",
     "redistribution": "재배포",
-    "redistributionDescription": "자유롭게 재배포 해주세요."
+    "redistributionDescription": "자유롭게 재배포 할 수 있습니다.",
+    "fanMade": "2차 창작",
+    "fanMadeDescription": "2차 장작은 자유롭게 할 수 있습니다."
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",
