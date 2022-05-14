@@ -1,17 +1,24 @@
 import SampleAudio from "./sample.mp3";
 import FullsizeImage from "./fullsize.png";
+import MiniImage from "./mini.png";
+import Text from './text.png';
 
 const descriptions = {
   is_vaild: false,
 
   id: "aru",
 
+	color: '#D6CB67',
+
+	mini_image: MiniImage,
+	text: Text,
+
 	descriptions: [
 		{
 			tag_name: "name",
-			ja: "フィッシャー まりん",
-			ko: "피셔 마린",
-			en: "Fisher Marin",
+			ja: "ある",
+			ko: "아루",
+			en: "Aru",
 		},
 		{
 			tag_name: "age",
@@ -40,9 +47,10 @@ const descriptions = {
 	],
 	
 	cv: {
-		ja: "KUNGOM",
-		ko: "군곰",
-		en: "KUNGOM",
+		tag_name: "cv",
+		ja: "サト",
+		ko: "사토",
+		en: "SATO",
 	},
   
   cv_twitter: "kungom_",
@@ -50,6 +58,15 @@ const descriptions = {
   sample_path: SampleAudio,
   fullsize_image: FullsizeImage,
   download_link: "",
+	
+	others: [
+		{
+			tag_name: "others",
+			ja: "2022.05.14 配布開始",
+			ko: "2022.05.14 배포 개시",
+			en: "2022.05.14 Release"
+		}
+	]
 };
 
 export default descriptions;

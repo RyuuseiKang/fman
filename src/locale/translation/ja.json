@@ -7,11 +7,18 @@
   },
   "main": {
     "readMore": "もっと見る",
-    "title": "UTAU 配布所"
+    "title": "UTAU 配布所",
+    "waitForAvailable": "まだ配布されていません。"
   },
   "policy": {
     "title": "利用規約",
-    "content": "대충 주저리주저리"
+    "content": "本規約は、このウェブサイト上で提供されるライブラリーを利用するために当サイトを利用するすべての方（以下「利用者」といいます。）に適用されます。\n利用者は、本規約に同意し、その利用を希望することになった場合に限り、本ライブラリーを利用することができます。",
+    "commercialUse": "商用利用",
+    "commercialUseDescription": "商用利用は許諾されていません。",
+    "modification": "修正・改変",
+    "modificationDescription": "配布したライブラリを修正・改変することは許諾されていません。",
+    "redistribution": "再配布",
+    "redistributionDescription": "配布したライブラリを再配布することは許諾されていません。"
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",
@@ -26,6 +33,7 @@
     "likes": "好きなこと",
     "others": "その他",
     "samples": "サンプル",
-    "download": "ダウンロード"
+    "download": "ダウンロード",
+    "downloadFiles": "ファイルをダウンロード"
   }
 }

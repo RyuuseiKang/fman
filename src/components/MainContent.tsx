@@ -3,13 +3,11 @@ import { t } from "i18next";
 import styled from "styled-components";
 import Carousel from 'framer-motion-carousel';
 
-import Aru from "../assets/aru.png";
-import Machan from "../assets/machan.png";
-import MainContentBackground from "../assets/maincontent-background.png";
 import Background from "../assets/background.png";
-import AruText from '../assets/aru-text.png';
-import MachanText from '../assets/machan-text.png';
 import { ReactComponent as Arrow } from '../assets/right-arrow.svg';
+
+import character, { Description, DescriptionTags } from "../assets/character/character";
+import i18n from "../locale/i18n";
 
 const Container = styled.div`
   background: url(${Background});
@@ -159,48 +157,50 @@ const ReadMoreText = styled.span`
   font-weight: bold;
 `;
 
+const WaitForAvailable = styled.span`
+  font-weight: bold;
+
+  color: ${({ color }) => color};
+  
+  font-size: 1.2rem;
+`;
+
 const MainContent: React.FC = () => {
   return (
     <Container>
       <Viewport>
         <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay={false} interval={5000} loop>
-          <Content>
-            <ItemContainer>
-              <CharacterDescription>
-                <CharacterNameContainer>
-                  <NameImg src={AruText} alt="aru" />
-                  <CVName color={'#D6CB67'}>CV. サト</CVName>
-                </CharacterNameContainer>
-                <ReadMore color={'#D6CB67'} href={'#aru'}>
-                  <Arrow />
-                  <ReadMoreText>{t<string>("main.readMore")}</ReadMoreText>
-                </ReadMore>
-              </CharacterDescription>
+          {
+            character.map((item, index) => {
+              const { id, mini_image, text, color, cv, is_vaild } = item.path;
 
-              <CharacterContainer>
-                <CharacterImage src={Aru} alt="aru" style={{ height: "60vh" }} />
-              </CharacterContainer>
-            </ItemContainer>
-          </Content>
+              return (
+                <Content>
+                  <ItemContainer>
+                    <CharacterDescription>
+                      <CharacterNameContainer>
+                        <NameImg src={text} alt={id} />
+                        <CVName color={color}>CV. {cv[i18n.language as keyof DescriptionTags]}</CVName>
+                      </CharacterNameContainer>
+                      {
+                        is_vaild ?
+                          (<ReadMore color={color} href={`#${id}`}>
+                            <Arrow />
+                            <ReadMoreText>{t<string>("main.readMore")}</ReadMoreText>
+                          </ReadMore>) : (
+                            <WaitForAvailable color={color}>{t<string>("main.waitForAvailable")}</WaitForAvailable>
+                          )
+                      }
+                    </CharacterDescription>
 
-          <Content>
-            <ItemContainer>
-              <CharacterDescription>
-                <CharacterNameContainer>
-                  <NameImg src={MachanText} alt="marin" />
-                  <CVName color={'#b3a4c6'}>CV. Kungom</CVName>
-                </CharacterNameContainer>
-                <ReadMore color={'#b3a4c6'} href={'#machan'}>
-                  <Arrow />
-                  <ReadMoreText>{t<string>("main.readMore")}</ReadMoreText>
-                </ReadMore>
-              </CharacterDescription>
-
-              <CharacterContainer>
-                <CharacterImage src={Machan} alt="marin" style={{ height: "60vh" }} />
-              </CharacterContainer>
-            </ItemContainer>
-          </Content>
+                    <CharacterContainer>
+                      <CharacterImage src={mini_image} alt={id} style={{ height: "60vh" }} />
+                    </CharacterContainer>
+                  </ItemContainer>
+                </Content>
+              );
+            })
+          }
         </Carousel>
       </Viewport>
     </Container>

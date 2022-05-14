@@ -1,11 +1,16 @@
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import AnimatedText from "react-animated-text-content";
 
+import { faAngleRight, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { motion } from "framer-motion";
 import TextAnimation from "../components/TextAnimation";
 import AudioPlayer from "../components/AudioPlayer";
+import { Description, DescriptionTags } from "../assets/character/character";
 
 const Container = styled.div`
   width: 100%;
@@ -62,33 +67,36 @@ const TwitterTag = styled.a`
   color: #333;
 `;
 
+const TwitterUsername = styled.span`
+  margin-left: 10px;
+`;
+
 const TagDescription = styled.span`
+flex-direction: row;
   padding-top: 10px;
   padding-bottom: 15px;
   padding-left: 30px;
   font-size: 1.1em;
 `;
 
-type DescriptionTags = {
-  tag_name: string;
-  ja: string;
-  ko: string;
-  en: string;
-};
+const DownloadButtonContainer = styled.div`
+  margin-top: 20px;
+`;
 
-type Description = {
-  is_vaild: boolean;
-  id: string;
+const DownloadButton = styled.a`
+  border-radius: 100px;
+  padding: 10px 30px;
+  background-color: ${({ color }) => color};
+  color: #FFF;
+  text-decoration: none;
 
-  descriptions: Array<DescriptionTags>;
+  transition: all 0.3s ease;
 
-  cv: DescriptionTags;
-  cv_twitter: string;
+  &:hover {
+    background-color: ${({ color }) => `${color}B0`};
+  }
+`;
 
-  sample_path: string;
-  fullsize_image: string;
-  download_link: string;
-};
 
 type VoiceBankProps = {
   characterDescription: Description;
@@ -104,65 +112,55 @@ const VoiceBank: React.FC<VoiceBankProps> = ({ characterDescription }) => {
           <CharacterImg src={characterDescription.fullsize_image} alt={characterDescription.id} />
         </div>
         <ProfileDescriptionContainer>
-          <TagContainer>
-            <TagTitle>{t<string>("voicebank.name")}</TagTitle>
-            <TextAnimation>
-              <TagDescription>
-                {t<string>("fisher marine")}
-              </TagDescription>
-            </TextAnimation>
-          </TagContainer>
-          <TagContainer>
-            <TagTitle>{t<string>("voicebank.age")}</TagTitle>
-            <TextAnimation>
-              <TagDescription>
-                {t<string>("300歳")}
-              </TagDescription>
-            </TextAnimation>
-          </TagContainer>
-          <TagContainer>
-            <TagTitle>{t<string>("voicebank.gender")}</TagTitle><TextAnimation>
-              <TagDescription>
-                {t<string>("fish boy")}
-              </TagDescription>
-            </TextAnimation>
-          </TagContainer>
+          {
+            characterDescription.descriptions.map((description, index) => (
+              <TagContainer>
+                <TagTitle>{t<string>(`voicebank.${description.tag_name}`)}</TagTitle>
+                <TextAnimation>
+                  <TagDescription>
+                    {description[i18next.language as keyof DescriptionTags]}
+                  </TagDescription>
+                </TextAnimation>
+              </TagContainer>
+            ))
+          }
           <TagContainer>
             <TagTitle>{t<string>("voicebank.cv")}</TagTitle><TextAnimation>
               <TwitterTag href={`https://twitter.com/${characterDescription.cv_twitter}`}>
                 <TagDescription>
-                  {characterDescription.cv.ja}
+                  <FontAwesomeIcon icon={faTwitter} />
+                  <TwitterUsername>
+                    @{characterDescription.cv_twitter}
+                  </TwitterUsername>
                 </TagDescription>
               </TwitterTag>
             </TextAnimation>
           </TagContainer>
           <TagContainer>
-            <TagTitle>{t<string>("voicebank.height")}</TagTitle><TextAnimation>
-              <TagDescription>
-                {t<string>("140㎝")}
-              </TagDescription></TextAnimation>
-          </TagContainer>
-          <TagContainer>
-            <TagTitle>{t<string>("voicebank.likes")}</TagTitle><TextAnimation>
-              <TagDescription>
-                {t<string>("Gaia / Playing with humans / Sea")}
-              </TagDescription></TextAnimation>
-          </TagContainer>
-          <TagContainer>
-            <TagTitle>{t<string>("voicebank.others")}</TagTitle>
-            <TextAnimation>
-              <TagDescription>
-                {t<string>("He is the king of the deep sea")}
-              </TagDescription>
-            </TextAnimation>
-          </TagContainer>
-          <TagContainer>
             <TagTitle>{t<string>("voicebank.samples")}</TagTitle>
-            <AudioPlayer src={characterDescription.sample_path} />
+            <AudioPlayer color={characterDescription.color} src={characterDescription.sample_path} />
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.download")}</TagTitle>
+            <DownloadButtonContainer>
+              <DownloadButton color={characterDescription.color} href={characterDescription.download_link}>
+                <FontAwesomeIcon icon={faArrowRight} style={{marginRight: 10}}/>
+                {t<string>("voicebank.downloadFiles")}
+              </DownloadButton>
+              </DownloadButtonContainer>
+          </TagContainer>
+          <TagContainer>
+            <TagTitle>{t<string>(`voicebank.others`)}</TagTitle>
+            {
+              characterDescription.others.map((others, index) => (
+                <TextAnimation>
+                  <TagDescription>
+                    {others[i18next.language as keyof DescriptionTags]}
+                  </TagDescription>
+                </TextAnimation>
 
+              ))
+            }
           </TagContainer>
         </ProfileDescriptionContainer>
       </Content>

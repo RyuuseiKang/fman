@@ -1,10 +1,17 @@
 import SampleAudio from "./sample.mp3";
 import FullsizeImage from "./fullsize.png";
+import MiniImage from "./mini.png";
+import Text from './text.png';
 
 const descriptions = {
   is_vaild: true,
 
   id: "machan",
+
+	color: "#b3a4c6",
+
+	mini_image: MiniImage,
+	text: Text,
 
 	descriptions: [
 		{
@@ -40,6 +47,7 @@ const descriptions = {
 	],
 	
 	cv: {
+		tag_name: "cv",
 		ja: "KUNGOM",
 		ko: "군곰",
 		en: "KUNGOM",
@@ -50,6 +58,15 @@ const descriptions = {
   sample_path: SampleAudio,
   fullsize_image: FullsizeImage,
   download_link: "",
+
+	others: [
+		{
+			tag_name: "others",
+			ja: "2022.05.14 配布開始",
+			ko: "2022.05.14 배포 개시",
+			en: "2022.05.14 Release"
+		}
+	]
 };
 
 export default descriptions;

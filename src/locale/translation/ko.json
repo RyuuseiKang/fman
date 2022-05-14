@@ -8,11 +8,18 @@
   },
   "main": {
     "readMore": "자세히 보기",
-    "title": "UTAU 배포소"
+    "title": "UTAU 배포소",
+    "waitForAvailable": "준비중입니다."
   },
   "policy": {
     "title": "이용규약",
-    "content": "대충 주저리주저리"
+    "content": "이 규약은 해당 웹 사이트에서 제공되는 라이브러리를 이용하기 위하여 사이트를 이용하는 모든 사람（이하 「이용자」로 칭함）에게 적용됩니다.\n이용자는 이 규약에 동의하며, 이를 이용하기를 희망하는 경우에 한하여, 본 라이브러리를 사용할 수 있습니다.",
+    "commercialUse": "商用利用",
+    "commercialUseDescription": "商用利用は許諾されていません。",
+    "modification": "修正・改変",
+    "modificationDescription": "配布したボイスバンクを修正・改変することは許諾されていません。",
+    "redistribution": "再配布",
+    "redistributionDescription": "配布したボイスバンクを再配布することは許諾されていません。"
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",
@@ -27,6 +34,7 @@
     "likes": "좋아하는 것",
     "others": "이 외",
     "samples": "샘플",
-    "download": "다운로드"
+    "download": "다운로드",
+    "downloadFiles": "파일 다운로드"
   }
 }

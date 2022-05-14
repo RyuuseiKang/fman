@@ -9,7 +9,7 @@ import ProgressBar from './ProgressBar';
 const Container = styled.div`
     flex-direction: row;
     border-radius: 5px;
-    background-color: #333;
+    background-color: ${({ color }) => color};
     padding: 10px;
     margin: 10px 0px;
 
@@ -26,6 +26,11 @@ const PlayButton = styled.button`
 const Button = styled(FontAwesomeIcon)`
     font-size: 50px;
     color: #FFF;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: #FFFFFFA0;
+    }
 `;
 
 const ProgressBarContainer = styled.div`
@@ -40,6 +45,7 @@ const CurrentTime = styled.div`
 
 type AudioPlayerProps = {
     src: string;
+    color: string;
 }
 
 const formatTime: any = (time: number) => {
@@ -49,7 +55,7 @@ const formatTime: any = (time: number) => {
     return `${minutes.toString()}:${seconds < 10 ? '0' : ''}${seconds.toString()}`;
 }
 
-const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
+const AudioPlayer: React.FC<AudioPlayerProps> = ({ src, color }) => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -57,7 +63,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
     const [currentTime, setCurrentTime] = useState<number>(0);
 
     return (
-        <Container>
+        <Container color={color}>
             <audio
                 onLoadedData={() => {
                     if (audioRef.current) {
