@@ -71,6 +71,10 @@ const TwitterUsername = styled.span`
   margin-left: 10px;
 `;
 
+const SampleUst = styled.span`
+  text-align: right;
+`;
+
 const TagDescription = styled.span`
 flex-direction: row;
   padding-top: 10px;
@@ -97,7 +101,6 @@ const DownloadButton = styled.a`
     background-color: ${({ color }) => `${color}B0`};
   }
 `;
-
 
 type VoiceBankProps = {
   characterDescription: Description;
@@ -137,6 +140,7 @@ const VoiceBank: React.FC<VoiceBankProps> = ({ characterDescription }) => {
           <TagContainer>
             <TagTitle>{t<string>("voicebank.samples")}</TagTitle>
             <AudioPlayer color={characterDescription.color} src={characterDescription.sample_path} />
+            <SampleUst>UST. {characterDescription.sample_ust}</SampleUst>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.download")}</TagTitle>
