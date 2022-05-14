@@ -97,7 +97,6 @@ const CharacterNameContainer = styled.div`
 `;
 
 const CVName = styled.p`
-  font-family: 'Mochiy Pop Regular';
   text-align: center;
   margin: 0px;
   font-size: 1.4rem;
@@ -111,6 +110,10 @@ const CVName = styled.p`
   -webkit-text-stroke: 1px ${({ color }) => color};
 
   text-shadow: 0px 0px 3px #ffffffcf;
+
+  &:lang(ja) {
+    font-family: 'Mochiy Pop Regular';
+  }
 
   @media (max-width: 865px) {
     font-size: 1rem;

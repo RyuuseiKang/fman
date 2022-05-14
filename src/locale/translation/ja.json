@@ -1,13 +1,13 @@
 {
   "header": {
-    "title": "配布所",
+    "title": "マル",
     "home": "ホーム",
     "policy": "利用規約",
-    "voicebank": "ボイスバンク"
+    "voicebank": "ライブラリー"
   },
   "main": {
     "readMore": "もっと見る",
-    "title": "UTAU 配布所",
+    "title": "マル配布所",
     "waitForAvailable": "まだ配布されていません。"
   },
   "policy": {
@@ -34,6 +34,6 @@
     "others": "その他",
     "samples": "サンプル",
     "download": "ダウンロード",
-    "downloadFiles": "ファイルをダウンロード"
+    "downloadFiles": "ライブラリーをダウンロード"
   }
 }

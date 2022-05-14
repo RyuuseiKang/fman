@@ -80,12 +80,13 @@ flex-direction: row;
 `;
 
 const DownloadButtonContainer = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
 `;
 
 const DownloadButton = styled.a`
   border-radius: 100px;
   padding: 10px 30px;
+  align-items: center;
   background-color: ${({ color }) => color};
   color: #FFF;
   text-decoration: none;
@@ -142,12 +143,14 @@ const VoiceBank: React.FC<VoiceBankProps> = ({ characterDescription }) => {
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.download")}</TagTitle>
-            <DownloadButtonContainer>
-              <DownloadButton color={characterDescription.color} href={characterDescription.download_link}>
-                <FontAwesomeIcon icon={faArrowRight} style={{marginRight: 10}}/>
-                {t<string>("voicebank.downloadFiles")}
-              </DownloadButton>
+            <TagDescription>
+              <DownloadButtonContainer>
+                <DownloadButton color={characterDescription.color} href={characterDescription.download_link}>
+                  <FontAwesomeIcon icon={faArrowRight} style={{ marginRight: 10 }} />
+                  {t<string>("voicebank.downloadFiles")}
+                </DownloadButton>
               </DownloadButtonContainer>
+            </TagDescription>
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>(`voicebank.others`)}</TagTitle>

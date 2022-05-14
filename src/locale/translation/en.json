@@ -1,13 +1,13 @@
 {
   "header": {
-    "title": "UTAU",
+    "title": "MARU",
     "home": "Home",
     "policy": "User policy",
-    "voicebank": "Voicebank"
+    "voicebank": "Library"
   },
   "main": {
     "readMore": "Read more",
-    "title": "UTAU voicebank distribution",
+    "title": "maru voicebank distribution",
     "waitForAvailable": "Wait for available"
   },
   "policy": {
@@ -34,6 +34,6 @@
     "others": "Others",
     "samples": "Sample",
     "download": "Download",
-    "downloadFiles": "Download Voice Bank"
+    "downloadFiles": "Download Library"
   }
 }

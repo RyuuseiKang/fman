@@ -10,12 +10,11 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  max-width: 880px;
+  max-width: 840px;
   width: 100%;
 `;
 
 const PolicyTitleContainer = styled.div`
-  padding: 1rem 0px;
 `;
 
 const PolicyTitle = styled.span`
@@ -23,7 +22,7 @@ const PolicyTitle = styled.span`
   font-weight: bold;
   
   background-color: #333;
-  padding: 0px 5px;
+  padding: 0px 10px;
   color: #FFF;
 
   box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
@@ -32,15 +31,15 @@ const PolicyTitle = styled.span`
 const PolicySubTitle = styled.span`
   font-size: 1.7rem;
   font-weight: bold;
-
-  margin-top: 10px;
 `;
 
 const PolicyContent = styled.p`
-  word-break: keep-all;
-  font-family: 'Pretendard';
-  margin: 10px 0px;
   white-space: pre-line;
+  padding-bottom: 10px;
+
+  &:lang(ko) {
+    font-family: 'Pretendard';
+  }
 `;
 
 const Policy: React.FC = () => {
@@ -57,7 +56,6 @@ const Policy: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ padding: '0.5rem 0px 0.5rem 0px' }}
         >
           <PolicySubTitle>{t<string>("policy.commercialUse")}</PolicySubTitle>
         </motion.div>
@@ -68,7 +66,6 @@ const Policy: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ padding: '0.5rem 0px 0.5rem 0px' }}
         >
           <PolicySubTitle>{t<string>("policy.modification")}</PolicySubTitle>
         </motion.div>
@@ -79,7 +76,6 @@ const Policy: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.5 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          style={{ padding: '0.5rem 0px 0.5rem 0px' }}
         >
           <PolicySubTitle>{t<string>("policy.redistribution")}</PolicySubTitle>
         </motion.div>

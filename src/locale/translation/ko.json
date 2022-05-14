@@ -1,25 +1,25 @@
 {
   "페이지를 찾을 수 없어요.": "페이지를 찾을 수 없어요.",
   "header": {
-    "title": "UTAU",
+    "title": "마루",
     "home": "홈",
     "policy": "이용규약",
-    "voicebank": "보이스 뱅크"
+    "voicebank": "라이브러리"
   },
   "main": {
     "readMore": "자세히 보기",
-    "title": "UTAU 배포소",
+    "title": "마루 배포소",
     "waitForAvailable": "준비중입니다."
   },
   "policy": {
     "title": "이용규약",
     "content": "이 규약은 해당 웹 사이트에서 제공되는 라이브러리를 이용하기 위하여 사이트를 이용하는 모든 사람（이하 「이용자」로 칭함）에게 적용됩니다.\n이용자는 이 규약에 동의하며, 이를 이용하기를 희망하는 경우에 한하여, 본 라이브러리를 사용할 수 있습니다.",
-    "commercialUse": "商用利用",
-    "commercialUseDescription": "商用利用は許諾されていません。",
-    "modification": "修正・改変",
-    "modificationDescription": "配布したボイスバンクを修正・改変することは許諾されていません。",
-    "redistribution": "再配布",
-    "redistributionDescription": "配布したボイスバンクを再配布することは許諾されていません。"
+    "commercialUse": "상업적 이용",
+    "commercialUseDescription": "상업적 사용은 허락되지 않습니다.",
+    "modification": "수정・개조",
+    "modificationDescription": "배포된 라이브러리의 수정・개조는 허락되지 않습니다.",
+    "redistribution": "재배포",
+    "redistributionDescription": "배포된 라이브러리를 재배포하는 것은 허락되지 않습니다."
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",
@@ -35,6 +35,6 @@
     "others": "이 외",
     "samples": "샘플",
     "download": "다운로드",
-    "downloadFiles": "파일 다운로드"
+    "downloadFiles": "라이브러리 다운로드"
   }
 }
