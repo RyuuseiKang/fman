@@ -1,6 +1,4 @@
 {
-  "페이지를 찾을 수 없어요.": "Page Not Found.",
-  "잘못된 접근입니다.": "Invalid Access.",
   "header": {
     "title": "UTAU",
     "home": "Home",
@@ -17,6 +15,17 @@
   },
   "footer": {
     "copyright": "Copyright 2022 RYU All Rights Reserved.",
-    "pageTop": "Page top"
+    "pageTop": "Page Top"
+  },
+  "voicebank": {
+    "name": "Name",
+    "age": "Age",
+    "gender": "Gender",
+    "height": "Height",
+    "cv": "CV",
+    "likes": "Likes",
+    "others": "Others",
+    "samples": "Sample",
+    "download": "Download"
   }
 }

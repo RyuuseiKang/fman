@@ -20,6 +20,7 @@ const Container = styled.div`
 const PlayButton = styled.button`
     background-color: transparent;
     border: none;
+    cursor: pointer;
 `;
 
 const Button = styled(FontAwesomeIcon)`

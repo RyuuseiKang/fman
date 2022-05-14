@@ -3,13 +3,9 @@ import React, { useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import AnimatedText from "react-animated-text-content";
 
-import MachanFull from "../assets/machan-full.png";
-import useOnScreen from "../hooks/useOnScreen";
 import { motion } from "framer-motion";
 import TextAnimation from "../components/TextAnimation";
 import AudioPlayer from "../components/AudioPlayer";
-
-import machanSample from "../assets/machan-sample.mp3";
 
 const Container = styled.div`
   width: 100%;
@@ -73,15 +69,39 @@ const TagDescription = styled.span`
   font-size: 1.1em;
 `;
 
-const VoiceBank: React.FC = () => {
-  const containerRef = useRef(null);
-  const isVisible = useOnScreen(containerRef);
+type DescriptionTags = {
+  tag_name: string;
+  ja: string;
+  ko: string;
+  en: string;
+};
 
-  return (
+type Description = {
+  is_vaild: boolean;
+  id: string;
+
+  descriptions: Array<DescriptionTags>;
+
+  cv: DescriptionTags;
+  cv_twitter: string;
+
+  sample_path: string;
+  fullsize_image: string;
+  download_link: string;
+};
+
+type VoiceBankProps = {
+  characterDescription: Description;
+};
+
+const VoiceBank: React.FC<VoiceBankProps> = ({ characterDescription }) => {
+  const containerRef = useRef(null);
+
+  return characterDescription.is_vaild ? (
     <Container ref={containerRef}>
       <Content>
-        <div id="machan">
-          <CharacterImg src={MachanFull} alt="machan" />
+        <div id={characterDescription.id}>
+          <CharacterImg src={characterDescription.fullsize_image} alt={characterDescription.id} />
         </div>
         <ProfileDescriptionContainer>
           <TagContainer>
@@ -109,9 +129,9 @@ const VoiceBank: React.FC = () => {
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.cv")}</TagTitle><TextAnimation>
-              <TwitterTag href="https://twitter.com/kungom_">
+              <TwitterTag href={`https://twitter.com/${characterDescription.cv_twitter}`}>
                 <TagDescription>
-                  {t<string>("kungom")}
+                  {characterDescription.cv.ja}
                 </TagDescription>
               </TwitterTag>
             </TextAnimation>
@@ -138,12 +158,16 @@ const VoiceBank: React.FC = () => {
           </TagContainer>
           <TagContainer>
             <TagTitle>{t<string>("voicebank.samples")}</TagTitle>
-            <AudioPlayer src={machanSample} />
+            <AudioPlayer src={characterDescription.sample_path} />
+          </TagContainer>
+          <TagContainer>
+            <TagTitle>{t<string>("voicebank.download")}</TagTitle>
+
           </TagContainer>
         </ProfileDescriptionContainer>
       </Content>
     </Container>
-  );
+  ) : (<div></div>);
 };
 
 export default VoiceBank;

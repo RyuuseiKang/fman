@@ -19,8 +19,14 @@
     "pageTop": "맨 위로"
   },
   "voicebank": {
-    "name": "Name",
-    "Age": "Age",
-    "likes": "Likes"
+    "name": "이름",
+    "Age": "나이",
+    "gender": "성별",
+    "height": "키",
+    "cv": "CV",
+    "likes": "좋아하는 것",
+    "others": "이 외",
+    "samples": "샘플",
+    "download": "다운로드"
   }
 }

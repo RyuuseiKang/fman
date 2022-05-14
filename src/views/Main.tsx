@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
+import {motion} from "framer-motion";
+
 import Policy from "./Policy";
 import VoiceBank from "./VoiceBank";
 
 import MainContent from "../components/MainContent";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import {motion} from "framer-motion";
+
+import Aru from "../assets/character/aru/descriptions.js";
+import Marin from "../assets/character/machan/descriptions.js";
 
 const Container = styled.div`
   background-color: #fefefe;
@@ -32,7 +36,8 @@ const Main: React.FC = () => {
         </div>
 
         <div id="voicebank"></div>
-          <VoiceBank />
+          <VoiceBank characterDescription={Marin}/>
+          <VoiceBank characterDescription={Aru}/>
         <Footer />
       </Container>
     </motion.div>
