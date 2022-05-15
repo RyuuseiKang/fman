@@ -172,7 +172,7 @@ const MainContent: React.FC = () => {
   return (
     <Container>
       <Viewport>
-        <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay={false} interval={5000} loop>
+        <Carousel renderArrowLeft={() => <div />} renderArrowRight={() => <div />} renderDots={() => <div />} autoPlay={true} interval={5000} loop>
           {
             character.map((item, index) => {
               const { id, mini_image, text, color, cv, is_vaild } = item.path;
